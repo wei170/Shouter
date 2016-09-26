@@ -3,6 +3,5 @@ class Shout < ApplicationRecord
   default_scope {
     order("created_at DESC")
   }
-  # user cannot send blank shout
-  validates :body, presence: true
+  belongs_to :content, polymorphic: true
 end
